@@ -8,6 +8,10 @@ if (system.args.length === 1) {
 
 var url = system.args[1];
 
+page.onConsoleMessage = function(msg) {
+  console.log("Console message:", msg);
+};
+
 page.open(url, function(status) {
   if (status !== 'success') {
     console.log("Failed to load the resource, exit somehow");
